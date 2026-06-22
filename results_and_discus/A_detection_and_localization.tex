@@ -1,0 +1,127 @@
+\subsection{Detection and localization}
+
+Here, two experiments have been conducted, a real experment in a Lake, and a simulation under more controlled conditions.
+
+\subsubsection{Lake experiments}
+We evaluated the detector on magnetic data, recorded in the lake of Bourg-Blanc, approxilatly 15 km northeast of Brest, in Brittany, France.
+
+the experiment involved an USV following a predermined path while carrying a triaxial fluxgate magnetometer, find photos in figure \ref{fig:experiment_setup}.
+
+\begin{figure*}[t]
+\centering
+
+\begin{minipage}[t]{0.32\textwidth}
+\centering
+\includegraphics[width=\linewidth]{results_and_discus/figures/helios_photo.jpg}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.62\textwidth}
+\centering
+\includegraphics[width=\linewidth]{results_and_discus/figures/google_earth.jpg}
+\end{minipage}
+
+\caption{Experimental platform and test site.}
+\label{fig:experiment_setup}
+\end{figure*}
+
+To set up the experiment, a loop of wire approximately 170 m long was deployed in the lake, at a depth between 1.5 and 2 meters, and energized with a DC current of 6A.
+
+The USV was programmed to follow a lawnmower trajectory and crosses he cable at a 90-degree angle.
+
+The norm of the recorded magnetometer data (which was sampled at 500Hz) was then provided as the input to the detector, as formulated in section \ref{sec:detector}.
+
+
+As a baseline, we considered MOBF of order 1 (Anderson OBF) as it is the most common for dipole detection; it is compared against our cable OBF and MOBF of order 2 (dipole + quadripole).
+
+Two types of figures have been produced: first, figure \ref{fig:trajectory_comparison}, which is the drone trajectory, colored according to the measured magnetic anomaly ( $F_s - |\vec T |) $; the true cable crossing positions are marked with a star, and the detections from the filter are marked with red x.
+A second plot, Figure \ref{fig:filter_output_comparison}, represents the normalized filter input (recorded magnetic anomaly) with the normalized filter output; x are the true cable crossing moments, and the red dots represents the filter detections (which are the peaks after thresholding).
+
+
+Analyzing the results, we see a clear distinction in performance: the MOBF misses the cable's exact location; in other words, the filter's maximum output lags the CPA moment by a measurable error of 1.56 and 1.9 meters for orders 1 and 2 respectively, whereas the detector based on cable OBF shows a reasonable error of 0.6 meters. 
+
+We note that in the real experiment, part of the lag is due to localization error at the GNSS level (but the same signal was used to test all detectors, and results were concluded from multiple tries for fairness). In Figure \ref{fig:filter_output_comparison}, we don't see isolated peaks in the filter output, and that is due to the two extremes of the cable loop being close to each other; a cleaner comparison is in the simulated experiment.
+
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{results_and_discus/figures/trajectory.png}
+    
+    \vspace{0.5cm}
+    
+    \includegraphics[width=\linewidth]{results_and_discus/figures/trajectoryAnderson.png}
+    
+    \vspace{0.5cm}
+    
+    \includegraphics[width=\linewidth]{results_and_discus/figures/trajectoryQuad.png} 
+    
+    \caption{Comparison of detection locations along the USV trajectory relative to the cable position. The color indicates the data entering the filter. Top: detections using the cable OBF. Bottom: detections using the dipole OBF.}
+    \label{fig:trajectory_comparison}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{results_and_discus/figures/filter_output.png}
+    
+    \vspace{0.5cm}
+    
+    \includegraphics[width=\linewidth]{results_and_discus/figures/filter_outputAnderson.png}
+    \vspace{0.5cm}
+    
+    \includegraphics[width=\linewidth]{results_and_discus/figures/filter_outputQuad.png}
+    
+    \caption{Comparison of filter outputs. 
+    Top: output using cable OBF. 
+    Bottom: output using dipole OBF.}
+    \label{fig:filter_output_comparison}
+\end{figure}
+
+\subsubsection{Simulation}\label{sec:simulation}
+
+We wrote a simulation program that generates a virtual trajectory as well as the magnetic field alongside it for any sensor or experiment configurations.
+
+Here we simulated the magnetic field of an electric wire following the Biot-Savart law, see equation \ref{eq:mag_field}, and as a trajectory we took a lawnmower pattern with constant velocity $v=1.8 \ m/s$, the cable depth goes from 1 to 1.5 meters, from start to finish. it carries a DC current of 6A, and the results were mixed with AWGN so that we obtained an SNR of -6db.
+
+the same plots presented in the real experiment have been plotted here \autoref{fig:trajectory_comparison_simu},\autoref{fig:filter_output_comparison_simu}.
+
+Analysing the plots we see a similar behavior to that of the real experiment, as our cable OBF, detected the cable presence at the exact moment with so little error (average error of 0.09 meters), the same could not be said for MOBF, as its first order (Anderson), detected the cable with a noticible lag, leading to constant localization error of 1.54 meters, a small notice, is that they peaked twise per crossing, this is mostly visible in the detected smaller peak near 340s in figure \ref{fig:filter_output_comparison_simu} (center).
+
+In the simulations, the SNR was lower than in the corresponding physical experiments. Under these conditions, the second-order MOBF produced output with increased noise levels and less well-defined peaks, thereby degrading the accuracy and robustness of the localization, giving a better average distance error than the first order (only 0.67 meter) but is much noisier.
+
+These findings empirically support the superior performance of Cable OBF for this study, given that precise and reliable localization constitutes the primary objective of the project.
+
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{results_and_discus/figures/trajectory_simu_noisy.png}
+    
+    \vspace{0.5cm}
+    
+    \includegraphics[width=\linewidth]{results_and_discus/figures/trajectoryAnderson_simu_noisy.png}
+    
+    \vspace{0.5cm}
+    
+    \includegraphics[width=\linewidth]{results_and_discus/figures/trajectoryquad_simu_noisy.png} 
+    
+    \caption{Comparison of detection locations along the USV trajectory relative to the cable position. The color indicates the data entering the filter. Top: detections using the cable OBF. Bottom: detections using the dipole OBF.}
+    \label{fig:trajectory_comparison_simu}
+\end{figure}
+
+\begin{figure*}[ht]
+    \centering
+
+    \includegraphics[width=\textwidth]{results_and_discus/figures/filter_output_simu_noisy.png}
+
+    \vspace{0.2cm}
+
+    \includegraphics[width=\textwidth]{results_and_discus/figures/filter_outputAnderson_simu_noisy.png}
+
+    \vspace{0.2cm}
+
+    \includegraphics[width=\textwidth]{results_and_discus/figures/filter_outputquad_simu_noisy.png}
+
+    \caption{Comparison of matched-filter outputs in a noisy simulation.
+    Top: cable OBF.
+    Middle: dipole OBF ($M=1$).
+    Bottom: quadrupole OBF ($M=2$).}
+    \label{fig:filter_output_comparison_simu}
+\end{figure*}

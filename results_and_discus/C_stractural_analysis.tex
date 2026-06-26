@@ -1,4 +1,4 @@
-\subsection{Structual and pysical analysis}
+\subsection{Structural and Physical Analysis}
 
 \begin{table}[ht!]
 \centering
@@ -34,11 +34,11 @@
     & $\displaystyle\frac{4\sqrt{21}\,(21\tau^4-18\tau^2+1)}{21\sqrt{\pi}\,(1+\tau^2)^{7/2}}$\\
 \hline
 \end{tabular}
-\caption{Comparison of cable, dipole (Anderson), and quadrupole orthonormal basis functions. (MOBF obtained with xxx algorithm)}
+\caption{Comparison of cable, dipole (Anderson), and quadrupole orthonormal basis functions (obtained using the Gegenbauer polynomials formulation from \cite{chenevas2025multipolar}).} 
 \label{tab:basis_comparison}
 \end{table}
 
-Taking a closer look at the equations in Table~\ref{tab:basis_comparison}, the cable's field along the trajectory is, up to scale, $s(\tau) \in \operatorname{span}\!\left\{\frac{1}{1+\tau^2},\, \frac{\tau}{1+\tau^2}\right\}$ — denominator power 1. The MOBF of order $N$ lives in $\operatorname{span}\!\left\{\frac{\tau^n}{(1+\tau^2)^{N+1/2}}\right\}_{n=0}^{2N}$ — denominator power $N + \tfrac{1}{2}$. So the dipole ($N=1$) decays as $(1+\tau^2)^{-5/2}$, the quadrupole ($N=2$) as $(1+\tau^2)^{-7/2}$, and so on. The exponent only grows with order.
+Taking a closer look at the equations in Table~\ref{tab:basis_comparison}, the cable's field along the trajectory is, up to scale, $s(\tau) \in \operatorname{span}\!\left\{\frac{1}{1+\tau^2},\, \frac{\tau}{1+\tau^2}\right\}$ — denominator power 1. The MOBF of order $N$ lives in $\operatorname{span}\!\left\{\frac{\tau^n}{(1+\tau^2)^{N+1/2}}\right\}_{n=0}^{2N}$ — denominator power $N + \tfrac{3}{2}$. So the dipole ($N=1$) decays as $(1+\tau^2)^{-5/2}$, the quadrupole ($N=2$) as $(1+\tau^2)^{-7/2}$, and so on. The exponent only grows with order.
 
 For the cable's slow $(1+\tau^2)^{-1}$ tail, one would need $N + \tfrac{3}{2} = 1$, i.e.\ $N = -\tfrac{1}{2}$ — not a valid multipole order. There is therefore no integer multipole, however low, whose decay matches the cable: every multipole decays faster, so every finite truncation misses energy in the tails.
 

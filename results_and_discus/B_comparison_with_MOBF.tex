@@ -1,4 +1,4 @@
-\subsection{Comparison with the multipolar framework}
+\subsection{Comparison with the Multipolar Framework}
 
 In complement to the experimental and simulation results, this subsection examines the detection performance and associated energy capture properties.
 
@@ -26,7 +26,7 @@ for s we took arbitrarily realistic parameters ($v=1.8 \ m/s; \ d=1\ m; \ \theta
 \begin{tabular}{|c|c|c|c|c|}
 \hline
 \textbf{Basis} &
-\shortstack{\textbf{Cable OBF}\\$(M=0)$} &
+\shortstack{\textbf{Cable OBF}} &
 \shortstack{\textbf{Dipole}\\$(M=1)$} &
 \shortstack{\textbf{Quadrupole}\\$(M=2)$} &
 \shortstack{\textbf{Octupole}\\$(M=3)$} \\
@@ -45,9 +45,9 @@ The results show that $\eta(M) < 1$for every finite, numerically usable M, and r
 
 \subsubsection{ROC and SNR}
 
-Building on the previous results, we evaluated the receiver operating characteristic (ROC) curve using both the analytical expression reported in the literature,
+Building on the previous results, we evaluated the receiver operating characteristic (ROC) curve using both the analytical expression reported in \cite{Kay1998Detection},
 \[
-P_d = \bar F_{\chi^2_v(\lambda)}\bigl(\bar F_{\chi^2_v}(P_{fa})\bigr),
+P_d = \bar F_{\chi^2_v(\lambda)}\bigl(\bar F_{\chi^2_v}^{-1}(P_{fa})\bigr),
 \]
 and a Monte Carlo simulation with \(2\times 10^4\) realizations, Figure~\ref{fig:ROCvsSNR}. For each SNR value, we computed the area under the curve (AUC), Figure~\ref{fig:AUCvsSNR}.
 

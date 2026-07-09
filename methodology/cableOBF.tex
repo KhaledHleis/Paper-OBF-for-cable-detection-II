@@ -9,7 +9,7 @@ where \(f_n(\tau\)) are the only terms that depend on time.
               \underbrace{\frac{\tau}{1+\tau^2}}_{{f_2(\tau)}}
 \end{equation*}
 
-Similar to the Anderson functions for dipoles, we can propose \(f_1(\tau)\) and \(f_2(\tau)\) as basis functions for cables; they just need to be orthonormalized, satisfying the following criteria:
+Similar to the Anderson functions for dipoles, we can propose \(f_1(\tau)\) and \(f_2(\tau)\) as basis functions for cables, they just need to be orthonormalized, satisfying the following criteria:
 
 \begin{equation*}
     \int_{-\infty}^{+\infty} \Phi_i(\tau)\, \Phi_j(\tau)\, d\tau = \delta_{ij}
@@ -24,7 +24,7 @@ where $\delta_{ij}$ is the Kronecker delta:
         0 & \text{if } i \neq j
     \end{cases}
 \]
-As the functions are already orthogonal, it is sufficient to normalize them; thus, we assume:
+As the functions are already orthogonal, it is sufficient to normalize them, thus, we assume:
 \begin{equation*}
     \Phi_1 = \kappa_1 f_1, \qquad \Phi_2 = \kappa_2 f_2
 \end{equation*}
@@ -42,7 +42,7 @@ The orthonormal basis functions for a cable carrying a DC current are therefore 
 \end{equation}
 where the normalized time parameter is defined as \(\tau = \frac{v\sin\theta}{d}\,t\).
 
-These OBF are plotted in Figure~\ref{fig:basis_funs} alongside MOBF from \cite{chenevas2025multipolar}, for order 1, which are the well-known Anderson functions for dipoles, and order 2, which combines the basis functions of a dipole and a quadrupole.
+\highlight{These OBF are plotted in Figure~\ref{fig:basis_funs} alongside MOBF from \cite{chenevas2025multipolar}, for order 1, which are the well-known Anderson functions for dipoles, and order 2, which combines the basis functions of a dipole and a quadrupole.}
 
 Finally substituting equation~\eqref{eq:OBF} into the expression for the magnetic anomaly in equation~\ref{eq:anomaly},
 yields the final anomaly signal representation for detection:

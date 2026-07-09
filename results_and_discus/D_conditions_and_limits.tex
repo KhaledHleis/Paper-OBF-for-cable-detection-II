@@ -1,8 +1,6 @@
 \subsection{Application Conditions and Limitations}
-Before ending, there are a couple of remarks regarding the extent to which the cable OBF are valid.
+We conclude with several remarks on the validity of the cable OBF.
 
-First, it is important to note that in Equation~\ref{eq:anomaly}, the first basis function is scaled by \(\cos\psi\). As a result, the projection of the signal onto $\Phi_1 $ vanishes as \(\Psi \rightarrow 90^\circ\), thereby reducing the effective dimensionality of the signal and potentially degrading detection performance in that orientation.
+First, in Equation~\ref{eq:anomaly}, the first basis function is scaled by \(\cos\psi\). Thus, the projection of the signal onto \(\Phi_1\) vanishes as \(\psi \rightarrow 90^\circ\), reducing the signal’s effective dimensionality and potentially degrading detection performance for that orientation.
 
-Second, the model assumes an infinitely straight conductor, but in reality it is only locally straight; as this study was never intended to discuss this aspect, it was encountered during the real experiment as the cable was not perfectly stretched (nor infinite), but no formulation or direct study has been made regarding this issue.
-
-Third, the OBF are orthonormal in the continuous and unbounded time domain; in reality they are sampled, and only a finite portion is taken as templates. The effect was unnoticed during the experiments, as we have selected a large enough window with a sample rate that have negligible error on the orthonormality of the basis.
+\highlight{Second, the OBF are orthonormal in continuous, unbounded time, but in practice they are sampled and truncated for use as templates. In our experiments, this had no noticeable impact because we used a sufficiently long window and a sampling rate that kept orthonormality errors negligible.}

@@ -32,6 +32,9 @@
 \definecolor{sectiongray}{rgb}{0.4,0.4,0.4}
 
 \newcommand{\Note}[1]{{\color{red}\bfseries #1}}
+\newcommand{\highlight}[1]{{\color{red} #1}}
+%\newcommand{\Note}[1]{#1}
+%\newcommand{\highlight}[1]{#1}
 % ============================================================
 \title{Derivation of new Orthonormal Basis Functions for Magnetic Detection of Submarine Telecommunications Cables}
 
@@ -39,7 +42,7 @@
 \IEEEauthorblockN{Khaled Hleis, Isabelle Quidu, Michel Legris, Alain Bertholom}
 \IEEEauthorblockA{
 \\Lab-STICC UMR CNRS 6285, ENSTA, Institut Polytechnique de Paris, Brest, France \\
-Emails: khaled.hleis@ensta.fr, isabelle.quidu@ensta.fr, alain.bertholom@ensta.fr
+Emails: khaled.hleis@ensta.fr
 }
 }
 % ============================================================
@@ -64,17 +67,18 @@ This paper presents a novel set of orthonormal basis functions (OBF) adapted for
 \input{methodology/methodology}
 \input{results_and_discus/Results_and_discussion}
 % ============================================================
+\FloatBarrier
 \input{conclusion}
 
 % ============================================================
 \section*{Acknowledgements}
 This study was carried out within the MARTOC (MArine Autonomous Research \& Tracking Of Cables) project, which brings together four companies and institutes: RTsys underwater technologies (also serving as project leader), Orange Marine, MAPPEM Geophysics, and ENSTA. We acknowledge financial support from Bpifrance under the France 2030 program.
 
-We also thank the Robotics Department at ENSTA for their support during the experiments and for providing the required equipment.
+We also thank the Robotics Team at ENSTA for their support during the experiments and for providing the required equipment.
 
-Finally, we thank MAPPEM Géophysics for their contribution in supplying the magnetic sensor equipment, assisting with the measurements during the experiments, and supporting the data conversion afterward.
+Finally, we thank MAPPEM Geophysics for their contribution in supplying the magnetic sensor equipment, assisting with the measurements during the experiments, and supporting the data conversion afterward.
 % ============================================================
-\bibliographystyle{plainnat}   % swap for: abbrvnat, unsrtnat, ieeetr, apalike ...
-\bibliography{References}      % points to references.bib
+\bibliographystyle{plainnat}  
+\bibliography{References}     
 
 \end{document}

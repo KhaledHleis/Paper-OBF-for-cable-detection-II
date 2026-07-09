@@ -18,14 +18,14 @@ Considering the setup shown in Figure \ref{fig:sensor_traj}. A sensor moves at a
     \label{fig:sensor_traj}
 \end{figure}
 
-Starting from the expression of the magnetic field in the CPA frame of reference, and noting that, as a telecommunications cable, the return current is via the seawater, which motivates modeling the cable as an infinite straight conductor carrying current in a single direction, under this assumption, the magnetic field is obtained using the classical Biot–Savart law:
+\highlight{Starting from the expression of the magnetic field in the CPA frame of reference, and noting that, as an underwater telecommunications cable, the return current is via the seawater, which motivates modeling the cable as an infinite straight conductor carrying current in a single direction, under this assumption, the magnetic field is obtained using the classical Biot–Savart law:}
 
 \begin{equation*}
     \vec{B} = \frac{\mu_0}{4\pi} \int \frac{I \, d\vec{\ell} \times \hat{r}}{r^2}
 \end{equation*}
 
 where, in our application, \(d\vec{\ell}\) is \(d\vec{y}\), and \(\vec{r}\) is \(\vec{\rho}\)   (the radial sensor position relative to the cable), further development will give :
-
+\highlight{
 \begin{equation}
     \vec{B} = \frac{\mu_0 I}{2\pi \rho}\,\vec{e}_{az}
     \label{eq:mag_field}
@@ -48,7 +48,7 @@ where $\vec{e}_{az}$ is the azimuthal unit vector (right-hand rule).
 d \\ 0 \\ x
 \end{pmatrix}
 \end{equation*}
-
+}
 Although \(\vec{B}\) is inherently a spatial field, the sensor motion causes it to be observed as a time-varying signal \(\vec{B}_s(t) = \vec{B}(\mathbf{\rho}(t))\).
 
 Assuming a rectilinear trajectory, the sensor position along the \(x\)-axis is given by
@@ -57,7 +57,7 @@ x(t) = v t \sin(\theta)
 \)
 and $\rho(t) = \sqrt{x^2(t) + d^2}$.
 
-For simplicity, we assume that the sensor does not rotate; i.e., its local \(x\) and \(z\) axes remain aligned with those of the CPA frame at all times.
+For simplicity, we assume that the sensor does not rotate, \textit{i.e., its local \(x\) and \(z\) axes remain aligned with those of the CPA frame at all times}.
 
 The measured magnetic field in the sensor frame is then
 \begin{equation*}

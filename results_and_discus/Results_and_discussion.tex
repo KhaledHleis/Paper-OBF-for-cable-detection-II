@@ -1,10 +1,10 @@
 \section{Performance Evaluation and Analysis}\label{sec:RnD}
-Following the formulation of the detector, we will evaluate its detection and localization performance against MOBF orders 1 and 2. Subsequently, we will conduct a more in-depth analysis of its structural characteristics and operational behavior under varying conditions, including an examination of the captured energy and receiver operating characteristic (ROC) curves at different signal-to-noise ratio (SNR) levels. This analysis will conclude with an overview of the expected limitations and sensitivities of the proposed detector.
+\highlight{Following the formulation of the detector, we will evaluate its detection and localization performance against MOBF orders 1 and 2. Subsequently, we will conduct a more in-depth analysis of its structural characteristics and operational behavior under varying conditions, including an examination of the captured energy and receiver operating characteristic (ROC) curves at different signal-to-noise ratio (SNR) levels. This analysis will conclude with an overview of the expected limitations and sensitivities of the proposed detector.}
 
 
 
-\input{results_and_discus/A_detection_and_localization}
-\input{results_and_discus/B_comparison_with_MOBF}
+\highlight{\input{results_and_discus/A_detection_and_localization}}
+\highlight{\input{results_and_discus/B_comparison_with_MOBF}}
 \input{results_and_discus/C_stractural_analysis}
 \input{results_and_discus/D_conditions_and_limits}
 
@@ -12,34 +12,33 @@ Following the formulation of the detector, we will evaluate its detection and lo
     \centering
     \begin{minipage}{\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{results_and_discus/figures/filter_output_simu_noisy.png}\\
         \textit{Cable OBF}
+        \includegraphics[width=\textwidth]{results_and_discus/figures/filter_output_simu_noisy.png}\\
     \end{minipage}
 
     \vspace{1em}
 
     \begin{minipage}{\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{results_and_discus/figures/filter_outputAnderson_simu_noisyc.png}\\
         \textit{Dipole MOBF, $M=1$ (Anderson)}
+        \includegraphics[width=\textwidth]{results_and_discus/figures/filter_outputAnderson_simu_noisy.png}\\
     \end{minipage}
 
     \vspace{1em}
 
     \begin{minipage}{\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{results_and_discus/figures/filter_outputquad_simu_noisyc.png}\\
         \textit{Quadrupole MOBF, $M=2$}
+        \includegraphics[width=\textwidth]{results_and_discus/figures/filter_outputquad_simu_noisy.png}\\
     \end{minipage}
     \begin{minipage}{\textwidth}
         \centering
         \includegraphics[width=\textwidth]{results_and_discus/figures/filter_output_legendsII.png}
     \end{minipage}
-
-    \caption{Comparison of matched-filter outputs in a noisy simulation.
+    
+    \caption{Comparison of filter outputs with detections and true cable crossings in a noisy simulation.
     Top: cable OBF.
     Middle: dipole MOBF ($M=1$).
     Bottom: quadrupole MOBF ($M=2$).}
     \label{fig:filter_output_comparison_simu}
 \end{figure*}
-\FloatBarrier

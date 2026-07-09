@@ -1,6 +1,6 @@
-\subsection{Structural and Physical Analysis}
+\subsection{Structural and Physical Analysis}\label{sec:SnP}
 
-\begin{table}[ht!]
+\highlight{\begin{table}[ht!]
 \centering
 \renewcommand{\arraystretch}{2.5}
 \begin{tabular}{|c|c|c|}
@@ -37,10 +37,13 @@
 \caption{Comparison of cable, dipole (Anderson), and quadrupole orthonormal basis functions (obtained using the Gegenbauer polynomials formulation from \cite{chenevas2025multipolar}).} 
 \label{tab:basis_comparison}
 \end{table}
+Returning to the statement made in the introduction, MOBFs are designed to represent spatially bounded (compact) sources enclosed within a finite Brillouin sphere. This configuration is fundamentally different from the infinite cable geometry, for which the source effectively extends without bound. In particular, the observation point can never lie outside the Brillouin sphere that encloses the source, and the inability of the MOBF expansion to reproduce the cable’s decay rate is a direct manifestation of this geometric incompatibility.
 
-Taking a closer look at the equations in Table~\ref{tab:basis_comparison}, the cable's field along the trajectory is, up to scale, $s(\tau) \in \operatorname{span}\!\left\{\frac{1}{1+\tau^2},\, \frac{\tau}{1+\tau^2}\right\}$ — denominator power 1. The MOBF of order $N$ lives in $\operatorname{span}\!\left\{\frac{\tau^n}{(1+\tau^2)^{N+1/2}}\right\}_{n=0}^{2N}$ — denominator power $N + \tfrac{3}{2}$. So the dipole ($N=1$) decays as $(1+\tau^2)^{-5/2}$, the quadrupole ($N=2$) as $(1+\tau^2)^{-7/2}$, and so on. The exponent only grows with order.
-
-For the cable's slow $(1+\tau^2)^{-1}$ tail, one would need $N + \tfrac{3}{2} = 1$, i.e.\ $N = -\tfrac{1}{2}$ — not a valid multipole order. There is therefore no integer multipole, however low, whose decay matches the cable: every multipole decays faster, so every finite truncation misses energy in the tails.
+This discrepancy is readily seen from the analytical expressions in Table~\ref{tab:basis_comparison}. For the cable OBF, the slowest decay rate is of order -1, as exhibited by the function $\phi_2(\tau)$. By contrast, an MOBF of order $M$ belongs to the space
+$
+\operatorname{span}\!\left\{\frac{\tau^n}{(1+\tau^2)^{M+3/2}}\right\}_{n=0}^{2M},
+$
+for which the slowest decay rate is given by $2M - 2\left(M+\tfrac{3}{2}\right) = -3$. This decay rate is independent of the multipole order $M$ and is strictly faster than the slowest cable decay rate of $-1$, so no finite multipole order can match the cable's behavior. Consequently, there is no multipole order whose decay matches that of the cable: every multipole decays more rapidly. As a result, any finite truncation of the multipole expansion necessarily fails to capture the full contribution of the field in the far tails.}
 
 
 \begin{figure}[ht]
@@ -62,7 +65,6 @@ For the cable's slow $(1+\tau^2)^{-1}$ tail, one would need $N + \tfrac{3}{2} = 
 \label{fig:OBF_d_theta}
 \end{figure}
 
-Regarding cable OBF in isolation, it depends on two unknown parameters $(\frac{v}{d}, \theta)$ where we must assign a prior value for detection, anamysis of the basis functions for varying values of $d$ and $\theta$ (see figure \ref{fig:OBF_d_theta}) indicates that their behavior exhibits relatively limited variation in the angular range from \(90^\circ\) to \(40^\circ\), whereas more pronounced changes occur between \(40^\circ\) and \(0^\circ\), a range that is less relevant for detection. This observation suggests a degree of robustness in the choice of the prior value for \(\theta\) before the detection stage. 
-
+Regarding cable OBF in isolation, it depends on two unknown parameters $(\frac{v}{d}, \theta)$ where we must assign a prior value for detection, analysis of the basis functions for varying values of $d$ and $\theta$ (see figure \ref{fig:OBF_d_theta}) indicates that their behavior exhibits relatively limited variation in the angular range from \(90^\circ\) to \(40^\circ\), whereas more pronounced changes occur between \(40^\circ\) and \(0^\circ\), a range that is less relevant for detection. This observation suggests a degree of robustness in the choice of the prior value for \(\theta\) before the detection stage. 
 Regarding the parameter \(d\), its influence is consistent with that reported in Anderson’s formulation and in \cite{Otnes2007}. Specifically, a relatively large prior uncertainty in \(d\) is acceptable when the source–receiver distance is large. However, as the distance approaches \(\sim 3\,\text{m}\) (which coincides with our operational detection range), the choice of prior becomes increasingly critical, since beyond this threshold the basis functions exhibit pronounced distortion relative to the recorded waveform.
 
